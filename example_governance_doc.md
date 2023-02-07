@@ -1,7 +1,7 @@
-# TNT Graph Integration Guidelines
+# ACME Graph Integration Guidelines
 
 ## Table of Contents
-- [TNT Graph Integration Guidelines](#tnt-graph-integration-guidelines)
+- [ACME Graph Integration Guidelines](#acme-graph-integration-guidelines)
   - [Table of Contents](#table-of-contents)
   - [Summary](#summary)
   - [Getting Help](#getting-help)
@@ -41,7 +41,7 @@ These stakeholders comprise the schema working group, or SWG.
 
 If you're not familiar with GraphQL, please start by looking at [Apollo's Odyssey tutorials](https://apollographql.com/tutorials/) to get acquainted with the technology.
 
-To request help with the TNT graph, please reach out in #graphql in Slack. 
+To request help with the ACME graph, please reach out in #graphql in Slack. 
 
 ## Background
 
@@ -65,7 +65,7 @@ During this process, you will go through a [schema review](#schema-reviews) proc
 
 ## Guidelines
 
-The core graph team has an established set of guidelines for contributing to the TNT graph, covered below. This is _not_ a list of schema design choices and information, but rather established standards the graph (schema or otherwise) is expected to follow. 
+The core graph team has an established set of guidelines for contributing to the ACME graph, covered below. This is _not_ a list of schema design choices and information, but rather established standards the graph (schema or otherwise) is expected to follow. 
 
 ### Schema Design Guidelines
 
