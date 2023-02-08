@@ -13,17 +13,21 @@
       - [How to Engage](#how-to-engage)
       - [Next Steps](#next-steps)
     - [Deprecations](#deprecations)
-  - [Guidelines](#guidelines)
+  - [Subgraph Author Guidelines](#subgraph-author-guidelines)
     - [Schema Design Guidelines](#schema-design-guidelines)
       - [Naming Requirements](#naming-requirements)
       - [Query and Mutation Naming](#query-and-mutation-naming)
       - [Pagination](#pagination)
       - [Errors](#errors)
     - [Security](#security)
-    - [For Client Developers/Consumers](#for-client-developersconsumers)
+  - [Consumer Guidelines](#consumer-guidelines)
+    - [Client Identification](#client-identification)
+    - [Operation Naming](#operation-naming)
+    - [Operation Variables](#operation-variables)
+    - [Use of Automatic Persisted Queries (APQ)](#use-of-automatic-persisted-queries-apq)
 
 
-##  Summary
+## Summary
 
 This document serves to assist both new and existing developers and consumers of the data graph to get started, either via additions or changes, and provide requirements and expectations for each. 
 
@@ -108,7 +112,7 @@ For subgraph teams needing to deprecate a field, the core graph team requires (b
   * The core graph team strongly encourages at least 3 months of notice
 * Once 3 months has passed, or until traffic has reached 0 traffic for the last 3 minor versions (whichever is less), the field can safely be removed
 
-## Guidelines
+## Subgraph Author Guidelines
 
 The core graph team has an established set of guidelines for contributing to the ACME graph, covered below. 
 
@@ -215,11 +219,72 @@ As with REST, ensuring a secure graph is paramount. To that, we recommend:
 * Sanitizing all input values, especially those using custom scalars
 
 
-### For Client Developers/Consumers
+## Consumer Guidelines
 
-As a consumer of the graph, we have a few guidelines: 
+As a consumer of the graph, we have a few requirements for utilizing the ACME data graph. 
 
-* Ensure the client identifies itself using a client name and version by passing an `ACME-Client-Version` and `ACME-Client-Name` on all requests
-  * This assists the core team with notifications and helps subgraph owners understand usage by your application(s)
-* Ensure the client uses APQs whenever possible; APQs offer performance benefits and helps clients
+### Client Identification
+
+Clients must identify themselves by name and version, ideally matching release versions. Name and version can be set in the client initialization or via an HTTP interceptor, with documentation below. We currently identify name and version by `x-client-name` and `x-client-version` respectively. Requests without these headers will be rejected.
+
+* [https://www.apollographql.com/docs/react/networking/basic-http-networking#customizing-request-headers](Web: https://www.apollographql.com/docs/react/networking/basic-http-networking#customizing-request-headers)
+* [https://www.apollographql.com/docs/kotlin/advanced/interceptors-http](Android: https://www.apollographql.com/docs/kotlin/advanced/interceptors-http)
+* [https://www.apollographql.com/docs/ios/networking/request-pipeline](iOS: https://www.apollographql.com/docs/ios/networking/request-pipeline)
+
+### Operation Naming
+
+Operations should have a self-descriptive name about the location and purpose of the request. For example:
+
+```gql
+# bad query (unnamed)
+query($id: ID!) {
+  user(id:$id) {
+    id
+  }
+}
+
+# bad query (poor name)
+query User($id: ID!) {
+  user(id:$id) {
+    id
+  }
+}
+
+# good query
+query UserDetailsPage_UserQuery($id: ID!) {
+  user(id:$id) {
+    id
+  }
+}
+```
+
+### Operation Variables
+
+Operations should use GraphQL variables instead of literals for input values whenever possible. For example: 
+
+```gql
+# bad query (literal input value)
+query UserDetailsPage_UserQuery{
+  user(id: "1") {
+    id
+  }
+}
+
+# good query
+query UserDetailsPage_UserQuery($id: ID!) {
+  user(id:$id) {
+    id
+  }
+}
+```
+
+### Use of Automatic Persisted Queries (APQ)
+
+[APQs offer a way to improve performance by not sending request bodies to the server, and instead a hash](https://www.apollographql.com/docs/apollo-server/performance/apq). As a result, we require that clients opt into using APQs as they can assist with both client and server performance. 
+
+To set up APQs, see relevant documentation: 
+
+* [https://www.apollographql.com/docs/apollo-server/performance/apq/#apollo-client-setup](React: https://www.apollographql.com/docs/apollo-server/performance/apq/#apollo-client-setup)
+* [https://www.apollographql.com/docs/kotlin/advanced/persisted-queries/#automatic-persisted-queries](Android: https://www.apollographql.com/docs/kotlin/advanced/persisted-queries/#automatic-persisted-queries)
+* [https://www.apollographql.com/docs/ios/fetching/apqs/](iOS: https://www.apollographql.com/docs/ios/fetching/apqs/)
 
