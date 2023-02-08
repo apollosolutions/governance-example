@@ -6,7 +6,13 @@
   - [Summary](#summary)
   - [Getting Help](#getting-help)
   - [Background](#background)
-  - [Getting Started](#getting-started)
+  - [Procedures](#procedures)
+    - [Getting Started](#getting-started)
+    - [Schema Reviews](#schema-reviews)
+      - [When to Engage](#when-to-engage)
+      - [How to Engage](#how-to-engage)
+      - [Next Steps](#next-steps)
+    - [Deprecations](#deprecations)
   - [Guidelines](#guidelines)
     - [Schema Design Guidelines](#schema-design-guidelines)
       - [Naming Requirements](#naming-requirements)
@@ -15,12 +21,6 @@
       - [Errors](#errors)
     - [Security](#security)
     - [For Client Developers/Consumers](#for-client-developersconsumers)
-  - [Procedures](#procedures)
-    - [Schema Reviews](#schema-reviews)
-      - [When to Engage](#when-to-engage)
-      - [How to Engage](#how-to-engage)
-      - [Next Steps](#next-steps)
-    - [Deprecations](#deprecations)
 
 
 ##  Summary
@@ -35,7 +35,7 @@ The graph is currently primarily maintained by the core graph team (#team-explos
   * Embedded
 * Subgraph teams
 
-These stakeholders comprise the schema working group, or SWG. 
+These stakeholders comprise the Schema Working Group, or SWG. 
 
 ## Getting Help
 
@@ -45,13 +45,17 @@ To request help with the ACME graph, please reach out in #graphql in Slack.
 
 ## Background
 
-As our company has grown over the past year, we realized that our existing REST API solution was failing to scale as we began to spin up new client applications and data requirements quick changed for each new addition. 
+As ACME has grown over the past year, we realized that our existing REST API solution was failing to scale as we began to spin up new client applications and data requirements quick changed for each new addition. 
 
-As a result, we landed on using GraphQL to power our new API in order to quickly add and change data as requirements changed. Additionally, GraphQL offered us an opportunity to enable clients to easily access the data they cared about. 
+As a result, we decided on using GraphQL to power our new API in order to quickly add and change data as requirements changed. Additionally, GraphQL offered us an opportunity to enable clients to easily access the data they cared about. 
 
 In order to accelerate development speed, we landed on using Apollo's Federation specification which enables portions of the overall graph to be known as "subgraphs." The overall graph is known as the supergraph. 
 
-## Getting Started
+## Procedures
+
+The core graph team has a few procedures needed for the smooth operation of the graph.
+
+### Getting Started
 
 If you are looking to expose your service as a subgraph, you will need to engage with the core graph team as early as possible over Slack in the #graphql channel and ideally providing the team with the following information: 
   * Context for why you're wanting to expose your service
@@ -63,9 +67,50 @@ Once the team has this information, the core graph team can start assisting with
 
 During this process, you will go through a [schema review](#schema-reviews) process, which is covered below with the assistance of the core graph team helping shape the initial schema.
 
+### Schema Reviews
+
+Schema additions and changes are always a time where it can be helpful to obtain feedback from all parts of the company, from clients to other subgraph teams. 
+
+#### When to Engage
+
+You should engage the SWG as early as possible if any of these match the schema changes or additions being proposed:
+
+* New subgraph team onboarding
+* Large or interesting schema additions
+* Deprecations of fields or subgraphs ([see the below deprecations section](#deprecations))
+* If a review would be helpful
+
+
+#### How to Engage
+
+While schema reviews are helpful, the core graph team also realizes that meeting after meeting isn't conducive to productivity. 
+
+With that, the SWG strongly recommends schema reviews whenever possibly by doing async reviews on a shared Google Doc. A template for such is [here](). This document will ask for necessary context, such as the currently proposed schema, alternative schemas, and any UI mocks if possible.
+
+To engage with the SWG, please reach out to #graphql-swg on Slack along with the above doc. 
+
+#### Next Steps
+
+Once the SWG has received the document, they will begin to provide comments and suggestions within the doc. 
+
+For new subgraphs, there will also be a separate meeting to discuss the proposal in-depth and provide further feedback. 
+
+Once both the SWG and subgraph team(s) agree on the change, the proposal will be considered "approved" and will move to be implemented into the supergraph. 
+
+### Deprecations
+
+Once a field no longer is fit for purpose, either through product changes (e.g. removal of a feature) or required changes that are not backwards-compatible, it may become necessary to deprecate it. 
+
+For subgraph teams needing to deprecate a field, the core graph team requires (barring special exemption): 
+
+* Marking the field as `@deprecated` within your subgraph schema
+* Using Apollo Studio, seeing current clients and providing them with information about the upcoming deprecation along with timetables
+  * The core graph team strongly encourages at least 3 months of notice
+* Once 3 months has passed, or until traffic has reached 0 traffic for the last 3 minor versions (whichever is less), the field can safely be removed
+
 ## Guidelines
 
-The core graph team has an established set of guidelines for contributing to the ACME graph, covered below. This is _not_ a list of schema design choices and information, but rather established standards the graph (schema or otherwise) is expected to follow. 
+The core graph team has an established set of guidelines for contributing to the ACME graph, covered below. 
 
 ### Schema Design Guidelines
 
@@ -178,48 +223,3 @@ As a consumer of the graph, we have a few guidelines:
   * This assists the core team with notifications and helps subgraph owners understand usage by your application(s)
 * Ensure the client uses APQs whenever possible; APQs offer performance benefits and helps clients
 
-
-## Procedures
-
-Lastly, the core graph team has a few procedures needed for the smooth operation of the graph.
-
-### Schema Reviews
-
-Schema additions and changes are always a time where it can be helpful to obtain feedback from all parts of the company, from clients to other subgraph teams. 
-
-#### When to Engage
-
-You should engage the SWG as early as possible if any of these match the schema changes or additions being proposed:
-
-* New subgraph team onboarding
-* Large or interesting schema additions
-* Deprecations of fields or subgraphs ([see the below deprecations section](#deprecations))
-* If a review would be helpful
-
-
-#### How to Engage
-
-While schema reviews are helpful, the core graph team also realizes that meeting after meeting isn't conducive to productivity. 
-
-With that, the SWG strongly recommends schema reviews whenever possibly by doing async reviews on a shared Google Doc. A template for such is [here](). This document will ask for necessary context, such as the currently proposed schema, alternative schemas, and any UI mocks if possible.
-
-To engage with the SWG, please reach out to #graphql-swg on Slack along with the above doc. 
-
-#### Next Steps
-
-Once the SWG has received the document, they will begin to provide comments and suggestions within the doc. 
-
-For new subgraphs, there will also be a separate meeting to discuss the proposal in-depth and provide further feedback. 
-
-Once both the SWG and subgraph team(s) agree on the change, the proposal will be considered "approved" and will move to be implemented into the supergraph. 
-
-### Deprecations
-
-Once a field no longer is fit for purpose, either through product changes (e.g. removal of a feature) or required changes that are not backwards-compatible, it may become necessary to deprecate it. 
-
-For subgraph teams needing to deprecate a field, the core graph team requires (barring special exemption): 
-
-* Marking the field as `@deprecated` within your subgraph schema
-* Using Apollo Studio, seeing current clients and providing them with information about the upcoming deprecation along with timetables
-  * The core graph team strongly encourages at least 3 months of notice
-* Once 3 months has passed, or until traffic has reached 0 traffic for the last 3 minor versions (whichever is less), the field can safely be removed
