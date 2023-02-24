@@ -53,7 +53,7 @@ As ACME has grown over the past year, we realized that our existing REST API sol
 
 As a result, we decided on using GraphQL to power our new API in order to quickly add and change data as requirements changed. Additionally, GraphQL offered us an opportunity to enable clients to easily access the data they cared about. 
 
-In order to accelerate development speed, we landed on using Apollo's Federation specification which enables portions of the overall graph to be known as "subgraphs." The overall graph is known as the supergraph. 
+In order to accelerate development speed, we landed on using [Apollo's Federation](https://www.apollographql.com/docs/federation) specification which enables portions of the overall graph to be known as "subgraphs." The overall graph is known as the supergraph. 
 
 ## Procedures
 
@@ -62,7 +62,7 @@ The core graph team has a few procedures needed for the smooth operation of the 
 ### Getting Started
 
 If you are looking to expose your service as a subgraph, you will need to engage with the core graph team as early as possible over Slack in the #graphql channel and ideally providing the team with the following information: 
-  * Context for why you're wanting to expose your service
+  * Context for why you're wanting to expose your service to clients
     * For example, you are supporting a new user interface element in the Trap mobile applications that allows users to purchase booby-traps
   * The Okta team name to be added to Apollo Studio
     * If this does not exist, please reach out to IT to have this created with all team members
@@ -225,7 +225,7 @@ As a consumer of the graph, we have a few requirements for utilizing the ACME da
 
 ### Client Identification
 
-Clients must identify themselves by name and version, ideally matching release versions. Name and version can be set in the client initialization or via an HTTP interceptor, with documentation below. We currently identify name and version by `x-client-name` and `x-client-version` respectively. Requests without these headers will be rejected.
+Clients must identify themselves by name and version, ideally matching release versions. Name and version can be set in the client initialization or via an HTTP interceptor, with documentation below. We currently identify name and version by `apollographql-client-name` and `apollographql-client-version` respectively. Requests without these headers will be rejected.
 
 * [https://www.apollographql.com/docs/react/networking/basic-http-networking#customizing-request-headers](Web: https://www.apollographql.com/docs/react/networking/basic-http-networking#customizing-request-headers)
 * [https://www.apollographql.com/docs/kotlin/advanced/interceptors-http](Android: https://www.apollographql.com/docs/kotlin/advanced/interceptors-http)
