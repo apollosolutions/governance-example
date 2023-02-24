@@ -49,7 +49,7 @@ To request help with the ACME graph, please reach out in #graphql in Slack.
 
 ## Background
 
-As ACME has grown over the past year, we realized that our existing REST API solution was failing to scale as we began to spin up new client applications and data requirements quick changed for each new addition. 
+As ACME has grown over the past year, we realized that our existing REST API solution was failing to scale as we began to spin up new client applications and data requirements quickly changed for each new addition. 
 
 As a result, we decided on using GraphQL to power our new API in order to quickly add and change data as requirements changed. Additionally, GraphQL offered us an opportunity to enable clients to easily access the data they cared about. 
 
@@ -62,6 +62,7 @@ The core graph team has a few procedures needed for the smooth operation of the 
 ### Getting Started
 
 If you are looking to expose your service as a subgraph, you will need to engage with the core graph team as early as possible over Slack in the #graphql channel and ideally providing the team with the following information: 
+
   * Context for why you're wanting to expose your service to clients
     * For example, you are supporting a new user interface element in the Trap mobile applications that allows users to purchase booby-traps
   * The Okta team name to be added to Apollo Studio
@@ -120,9 +121,12 @@ The core graph team has an established set of guidelines for contributing to the
 
 GraphQL's strengths lie in its ability to be descriptive and easy to understand. To that, we have a list of requirements to encourage a readable schema for consumers and developers alike. 
 
+[Apollo also provides recommendations which we adhere to for the most part](https://www.apollographql.com/docs/technotes/tags/schema-design), but below are specific conventions we've landed on. We do recommend reading through Apollo's recommendations as they can be a useful tool to design better schemas. 
+
 #### Naming Requirements
 
 We require GraphQL the following naming conventions: 
+
 * Object names to be Pascal-case and singular
 * Fields to be camel-case
 * Enum values to be screaming snake-case
@@ -153,7 +157,7 @@ enum userType {
 
 #### Query and Mutation Naming
 
-Beyond type and value names, we also enforce naming requirements on query and operations. For both: 
+Beyond type and value names, we also enforce naming requirements on operations. 
 
 * We discourage the use of REST-style prefixes (e.g. GET, POST, PATCH)
 * Use single-purpose queries and mutations whenever possible
@@ -188,7 +192,7 @@ When designing your schema, consider how clients will access the data and any ex
 
 For example, if a customer attempted to purchase a product but ran into an error with the information they provided, we should ideally return back what they needed to change or fix within the UI. 
 
-Given that example, we could do the following: 
+For example, we could do the following: 
 
 ```gql 
 type Mutation {
@@ -213,7 +217,7 @@ This would result in a mutation that would either return a success state (happy 
 
 ### Security
 
-As with REST, ensuring a secure graph is paramount. To that, we recommend: 
+As with REST, ensuring a secure API is paramount. To that, we recommend: 
 
 * Authorizing users at your subgraph rather than ensuring this is done at the edge
 * Sanitizing all input values, especially those using custom scalars
