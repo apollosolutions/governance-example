@@ -231,9 +231,9 @@ As a consumer of the graph, we have a few requirements for utilizing the ACME da
 
 Clients must identify themselves by name and version, ideally matching release versions. Name and version can be set in the client initialization or via an HTTP interceptor, with documentation below. We currently identify name and version by `apollographql-client-name` and `apollographql-client-version` respectively. Requests without these headers will be rejected.
 
-* [https://www.apollographql.com/docs/react/networking/basic-http-networking#customizing-request-headers](Web: https://www.apollographql.com/docs/react/networking/basic-http-networking#customizing-request-headers)
-* [https://www.apollographql.com/docs/kotlin/advanced/interceptors-http](Android: https://www.apollographql.com/docs/kotlin/advanced/interceptors-http)
-* [https://www.apollographql.com/docs/ios/networking/request-pipeline](iOS: https://www.apollographql.com/docs/ios/networking/request-pipeline)
+* [Web: https://www.apollographql.com/docs/react/networking/basic-http-networking#customizing-request-headers](https://www.apollographql.com/docs/react/networking/basic-http-networking#customizing-request-headers)
+* [Android: https://www.apollographql.com/docs/kotlin/advanced/interceptors-http](https://www.apollographql.com/docs/kotlin/advanced/interceptors-http)
+* [iOS: https://www.apollographql.com/docs/ios/networking/request-pipeline](https://www.apollographql.com/docs/ios/networking/request-pipeline)
 
 ### Operation Naming
 
@@ -288,7 +288,7 @@ query UserDetailsPage_UserQuery($id: ID!) {
 
 To set up APQs, see relevant documentation: 
 
-* [https://www.apollographql.com/docs/apollo-server/performance/apq/#apollo-client-setup](React: https://www.apollographql.com/docs/apollo-server/performance/apq/#apollo-client-setup)
-* [https://www.apollographql.com/docs/kotlin/advanced/persisted-queries/#automatic-persisted-queries](Android: https://www.apollographql.com/docs/kotlin/advanced/persisted-queries/#automatic-persisted-queries)
-* [https://www.apollographql.com/docs/ios/fetching/apqs/](iOS: https://www.apollographql.com/docs/ios/fetching/apqs/)
+* [React: https://www.apollographql.com/docs/apollo-server/performance/apq/#apollo-client-setup](https://www.apollographql.com/docs/apollo-server/performance/apq/#apollo-client-setup)
+* [Android: https://www.apollographql.com/docs/kotlin/advanced/persisted-queries/#automatic-persisted-queries](https://www.apollographql.com/docs/kotlin/advanced/persisted-queries/#automatic-persisted-queries)
+* [iOS: https://www.apollographql.com/docs/ios/fetching/apqs/](https://www.apollographql.com/docs/ios/fetching/apqs/)
 
