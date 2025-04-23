@@ -92,7 +92,6 @@ The success outcomes for the mission established by ACME are as follows:
 3. Establish a "GraphQL Shepherds" guild to play a key role in training and upleveling GraphQL expertise across the dev teams.
 4. Up-level GraphQL expertise across the organization
 
-
 ## Procedures
 
 The core graph team has a few procedures needed for the smooth operation of the graph.
@@ -128,17 +127,19 @@ You should engage the SWG as early as possible if any of these match the schema 
 
 While schema reviews are helpful, the core graph team also realizes that meeting after meeting isn't conducive to productivity. 
 
-With that, the SWG strongly recommends schema reviews whenever possibly by doing async reviews on a shared Google Doc. A template for such is [here](). This document will ask for necessary context, such as the currently proposed schema, alternative schemas, and any UI mocks if possible.
+With that, the SWG strongly recommends schema reviews using Apollo's [schema proposals](https://www.apollographql.com/docs/graphos/platform/schema-management/proposals) feature. Managing schema changes using schema proposals enables teams to propose schema changes that are validated against our development variant, running composition, linting and schema checks on every change. 
 
-To engage with the SWG, please reach out to #graphql-swg on Slack along with the above doc. 
+To engage with the SWG, please reach out to #graphql-swg on Slack along with a link to the appropriate schema proposal. 
 
 #### Next Steps
 
-Once the SWG has received the document, they will begin to provide comments and suggestions within the doc. 
+Once the SWG has received the proposal, they will begin to provide comments and suggestions within the tool. 
 
 For new subgraphs, there will also be a separate meeting to discuss the proposal in-depth and provide further feedback. 
 
-Once both the SWG and subgraph team(s) agree on the change, the proposal will be considered "approved" and will move to be implemented into the supergraph. 
+Once both the SWG and subgraph team(s) agree on the change, the proposal will be considered "approved" and will move to be implemented into the supergraph.
+
+Subgraph teams can pull down the approved proposal using `rover` and once published to the supergraph the proposal will be marked as "implemented"
 
 ### Deprecations
 
@@ -159,7 +160,9 @@ The core graph team has an established set of guidelines for contributing to the
 
 GraphQL's strengths lie in its ability to be descriptive and easy to understand. To that, we have a list of requirements to encourage a readable schema for consumers and developers alike. 
 
-[Apollo also provides recommendations which we adhere to for the most part](https://www.apollographql.com/docs/technotes/tags/schema-design), but below are specific conventions we've landed on. We do recommend reading through Apollo's recommendations as they can be a useful tool to design better schemas. 
+[Apollo also provides recommendations which we adhere to for the most part](https://www.apollographql.com/docs/technotes/tags/schema-design), but below are specific conventions we've landed on. We do recommend reading through Apollo's recommendations as they can be a useful tool to design better schemas. Furthermore these conventions are validated using Apollo's built-in [schema linting](https://www.apollographql.com/docs/graphos/platform/schema-management/linting) which is run on every schema check.
+
+A full list of schema linter rules can be found [here](https://www.apollographql.com/docs/graphos/platform/schema-management/linting/rules)
 
 #### Naming Requirements
 
