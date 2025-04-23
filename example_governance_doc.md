@@ -45,13 +45,13 @@ These stakeholders comprise the Schema Working Group, or SWG.
 
 To request help with the ACME graph, please reach out in #graphql in Slack. 
 
-The following is a proposed learning path for contributors not familiar with Apollo GraphQL
+The following is a proposed learning path for contributors not familiar with Apollo GraphQL.
 
 ### Learning Paths
 
-Apollo offers two certification courses through our Odyssey platform: [Associate](https://www.apollographql.com/tutorials/certifications/apollo-graph-associate) and [Professional](https://www.apollographql.com/tutorials/certifications/apollo-graph-professional). Contributors are recommended to complete at least the Associate certification in order to understand the basics of GraphQL and Federation.
+Apollo offers two certification courses through their Odyssey platform: [Associate](https://www.apollographql.com/tutorials/certifications/apollo-graph-associate) and [Professional](https://www.apollographql.com/tutorials/certifications/apollo-graph-professional). Contributors are recommended to complete at least the Associate certification in order to understand the basics of GraphQL and Federation.
 
-In addition to the certifications, Odyssey also offers smaller modules for focusing on certain areas:
+In addition to the certifications, Apollo also offers smaller modules for focusing on certain areas:
 
 - [A bite-sized course on what federation is](https://www.apollographql.com/tutorials/introduction-to-federation)
 - [Basics of GraphOS with a strong focus on Studio usage](https://www.apollographql.com/tutorials/getting-started-with-graphos)
@@ -59,15 +59,17 @@ In addition to the certifications, Odyssey also offers smaller modules for focus
 - [Beta mini-course on growing your supergraph](https://www.apollographql.com/tutorials/graphos-growing-supergraph)
 - [Beta course around leveraging Apollo Client on a React front-end](https://www.apollographql.com/tutorials/client-side-graphql-react)
 
-### Enterprise Modules:
+### Enterprise Modules
+
 Enterprise modules require ACME contributors to log into Odyssey using their SSO credentials
 - [Effective graph stewardship](https://www.apollographql.com/tutorials/effective-stewardship)
 - [Observability in GraphOS](https://www.apollographql.com/tutorials/supergraph-observability)
-- [Testing (unit and load testing on both the client and the server)](https://www.apollographql.com/tutorials/testing)
+- [Testing for both clients and the servers](https://www.apollographql.com/tutorials/testing)
 
-### Additional Resources:
-- A great reference for GraphQL is the official [GraphQL website](https://graphql.org/learn/)
-- Teams are also encouraged to run through [Supergraph Architecture Framework (SAF) assessment](https://saf.apollographql.com/) to better understand their GraphQL posture across several pillars like Reliability, Security, Operational Excellence, Performance and Developer Experience.
+### Additional Resources
+
+- Another great reference for GraphQL is the official [GraphQL website](https://graphql.org/learn/)
+- Teams are also encouraged to run through [Supergraph Architecture Framework (SAF) assessment](https://saf.apollographql.com/) to better understand their GraphQL posture across several pillars like Reliability, Security, Operational Excellence, Performance and Developer Experience
 
 ## Background
 
