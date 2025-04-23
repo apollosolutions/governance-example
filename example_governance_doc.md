@@ -49,7 +49,7 @@ The following is a proposed learning path for contributors not familiar with Apo
 
 ### Learning Paths
 
-Apollo offers two certification courses through our Odyssey platform: [Associate](https://www.apollographql.com/tutorials/certifications/apollo-graph-associate) and [Professional](https://www.apollographql.com/tutorials/certifications/apollo-graph-professional). Contributers are recommended to complete at least the Associate certification in order to understand the basics of GraphQL and Federation.
+Apollo offers two certification courses through our Odyssey platform: [Associate](https://www.apollographql.com/tutorials/certifications/apollo-graph-associate) and [Professional](https://www.apollographql.com/tutorials/certifications/apollo-graph-professional). Contributors are recommended to complete at least the Associate certification in order to understand the basics of GraphQL and Federation.
 
 In addition to the certifications, Odyssey also offers smaller modules for focusing on certain areas:
 
@@ -60,7 +60,7 @@ In addition to the certifications, Odyssey also offers smaller modules for focus
 - [Beta course around leveraging Apollo Client on a React front-end](https://www.apollographql.com/tutorials/client-side-graphql-react)
 
 ### Enterprise Modules:
-Enterprise modules require ACME contributers to log into Odyssey using their SSO credentials
+Enterprise modules require ACME contributors to log into Odyssey using their SSO credentials
 - [Effective graph stewardship](https://www.apollographql.com/tutorials/effective-stewardship)
 - [Observability in GraphOS](https://www.apollographql.com/tutorials/supergraph-observability)
 - [Testing (unit and load testing on both the client and the server)](https://www.apollographql.com/tutorials/testing)
@@ -79,18 +79,18 @@ In order to accelerate development speed, we landed on using [Apollo's Federatio
 
 ### Mission and Vision
 
-ACME is looking to establish a supergraph that is the preferred development platform for the vast majority of new services. Where advantageous, ACME will simplify their architecture by retiring Restful APIs.
+ACME is looking to establish a supergraph that is the preferred development platform for all services.
 
-The goal of the ACME supergraph is to be the aggregation layer on top of the new domain APIs architecture, defining and mapping relationships in the data across bounded contexts. Their vision is that the graph will be that defined relationship across bounded contexts. This will be a multi-year journey as they have elected for an “opt-in” model for graph adoption, rather than a mandate. Key to their success will be to make the supergraph a preferred mode of development over REST BFFs. 
+The goal of the ACME supergraph is to be the aggregation layer on top of the a domain-based services architecture, defining and mapping relationships in the data across bounded contexts. Key to our success will be to make the supergraph the preferred mode of development over REST APIs as measured by the percentage of requests going to our GraphQL instance vs their REST counterparts. 
 
-The surface of the graph potentially spans each of our current Domain APIs, beginning with the four which have active development.
+The surface of the graph will span each of our current domain services, beginning with the most used domains first.
 
 The success outcomes for the mission established by ACME are as follows:
 
-1. Simplify API landscape by making the GraphQL supergraph the preferred platform over continued development of RESTful APIs. 
-2. Focus on building reusable Domain APIs to focus on reusability, maintainability and scalability while minimizing the timelines required to update business logic.
-3. Establish a "GraphQL Shepherds" guild to play a key role in training and upleveling GraphQL expertise across the dev teams.
-4. Up-level GraphQL expertise across the organization
+1. We will simplify the API landscape by making the GraphQL supergraph the preferred platform over continued development of RESTful APIs. 
+2. Our focus will be on building reusable Domain APIs to focus on reusability, maintainability and scalability while minimizing the timelines required to update business logic.
+3. We will also establish a "GraphQL Shepherds" guild to play a key role in training and up-leveling GraphQL expertise across the dev teams.
+4. This, in turn will help to spread GraphQL expertise across the organization
 
 ## Procedures
 
@@ -122,12 +122,11 @@ You should engage the SWG as early as possible if any of these match the schema 
 * Deprecations of fields or subgraphs ([see the below deprecations section](#deprecations))
 * If a review would be helpful
 
-
 #### How to Engage
 
 While schema reviews are helpful, the core graph team also realizes that meeting after meeting isn't conducive to productivity. 
 
-With that, the SWG strongly recommends schema reviews using Apollo's [schema proposals](https://www.apollographql.com/docs/graphos/platform/schema-management/proposals) feature. Managing schema changes using schema proposals enables teams to propose schema changes that are validated against our development variant, running composition, linting and schema checks on every change. 
+With that, the SWG strongly recommends schema reviews using Apollo's [schema proposals](https://www.apollographql.com/docs/graphos/platform/schema-management/proposals) feature. Managing schema changes using schema proposals enables teams to propose schema changes that are validated against our development variant, running composition, linting and schema checks on every change.
 
 To engage with the SWG, please reach out to #graphql-swg on Slack along with a link to the appropriate schema proposal. 
 
@@ -160,7 +159,7 @@ The core graph team has an established set of guidelines for contributing to the
 
 GraphQL's strengths lie in its ability to be descriptive and easy to understand. To that, we have a list of requirements to encourage a readable schema for consumers and developers alike. 
 
-[Apollo also provides recommendations which we adhere to for the most part](https://www.apollographql.com/docs/technotes/tags/schema-design), but below are specific conventions we've landed on. We do recommend reading through Apollo's recommendations as they can be a useful tool to design better schemas. Furthermore these conventions are validated using Apollo's built-in [schema linting](https://www.apollographql.com/docs/graphos/platform/schema-management/linting) which is run on every schema check.
+[Apollo also provides recommendations which we adhere to for the most part](https://www.apollographql.com/docs/technotes/tags/schema-design), but below are specific conventions we've landed on. We do recommend reading through Apollo's recommendations as they can be a useful tool to design better schemas. Furthermore, these conventions are validated using Apollo's built-in [schema linter](https://www.apollographql.com/docs/graphos/platform/schema-management/linting) which is run with every schema check.
 
 A full list of schema linter rules can be found [here](https://www.apollographql.com/docs/graphos/platform/schema-management/linting/rules)
 
@@ -200,7 +199,7 @@ enum userType {
 
 Beyond type and value names, we also enforce naming requirements on operations. 
 
-* We discourage the use of REST-style prefixes (e.g. GET, POST, PATCH)
+* We discourage the use of REST-style prefixes (e.g. `GET`, `POST`, `PATCH`)
 * Use single-purpose queries and mutations whenever possible
 
 Examples:
