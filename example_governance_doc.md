@@ -43,9 +43,31 @@ These stakeholders comprise the Schema Working Group, or SWG.
 
 ## Getting Help
 
-If you're not familiar with GraphQL, please start by looking at [Apollo's Odyssey tutorials](https://apollographql.com/tutorials/) to get acquainted with the technology.
-
 To request help with the ACME graph, please reach out in #graphql in Slack. 
+
+The following is a proposed learning path for contributors not familiar with Apollo GraphQL
+
+### Learning Paths
+
+Apollo offers two certification courses through our Odyssey platform: [Associate](https://www.apollographql.com/tutorials/certifications/apollo-graph-associate) and [Professional](https://www.apollographql.com/tutorials/certifications/apollo-graph-professional). Contributers are recommended to complete at least the Associate certification in order to understand the basics of GraphQL and Federation.
+
+In addition to the certifications, Odyssey also offers smaller modules for focusing on certain areas:
+
+- [A bite-sized course on what federation is](https://www.apollographql.com/tutorials/introduction-to-federation)
+- [Basics of GraphOS with a strong focus on Studio usage](https://www.apollographql.com/tutorials/getting-started-with-graphos)
+- [Beta course for safe API delivery into GraphOS](https://www.apollographql.com/tutorials/graphos-shipping-supergraph)
+- [Beta mini-course on growing your supergraph](https://www.apollographql.com/tutorials/graphos-growing-supergraph)
+- [Beta course around leveraging Apollo Client on a React front-end](https://www.apollographql.com/tutorials/client-side-graphql-react)
+
+### Enterprise Modules:
+Enterprise modules require ACME contributers to log into Odyssey using their SSO credentials
+- [Effective graph stewardship](https://www.apollographql.com/tutorials/effective-stewardship)
+- [Observability in GraphOS](https://www.apollographql.com/tutorials/supergraph-observability)
+- [Testing (unit and load testing on both the client and the server)](https://www.apollographql.com/tutorials/testing)
+
+### Additional Resources:
+- A great reference for GraphQL is the official [GraphQL website](https://graphql.org/learn/)
+- Teams are also encouraged to run through [Supergraph Architecture Framework (SAF) assessment](https://saf.apollographql.com/) to better understand their GraphQL posture across several pillars like Reliability, Security, Operational Excellence, Performance and Developer Experience.
 
 ## Background
 
@@ -53,7 +75,23 @@ As ACME has grown over the past year, we realized that our existing REST API sol
 
 As a result, we decided on using GraphQL to power our new API in order to quickly add and change data as requirements changed. Additionally, GraphQL offered us an opportunity to enable clients to easily access the data they cared about. 
 
-In order to accelerate development speed, we landed on using [Apollo's Federation](https://www.apollographql.com/docs/federation) specification which enables portions of the overall graph to be known as "subgraphs." The overall graph is known as the supergraph. 
+In order to accelerate development speed, we landed on using [Apollo's Federation](https://www.apollographql.com/docs/federation) specification which enables portions of the overall graph to be known as "subgraphs." The overall graph is known as the supergraph. These principles are outlined in our Mission and Vision statement below:
+
+### Mission and Vision
+
+ACME is looking to establish a supergraph that is the preferred development platform for the vast majority of new services. Where advantageous, ACME will simplify their architecture by retiring Restful APIs.
+
+The goal of the ACME supergraph is to be the aggregation layer on top of the new domain APIs architecture, defining and mapping relationships in the data across bounded contexts. Their vision is that the graph will be that defined relationship across bounded contexts. This will be a multi-year journey as they have elected for an “opt-in” model for graph adoption, rather than a mandate. Key to their success will be to make the supergraph a preferred mode of development over REST BFFs. 
+
+The surface of the graph potentially spans each of our current Domain APIs, beginning with the four which have active development.
+
+The success outcomes for the mission established by ACME are as follows:
+
+1. Simplify API landscape by making the GraphQL supergraph the preferred platform over continued development of RESTful APIs. 
+2. Focus on building reusable Domain APIs to focus on reusability, maintainability and scalability while minimizing the timelines required to update business logic.
+3. Establish a "GraphQL Shepherds" guild to play a key role in training and upleveling GraphQL expertise across the dev teams.
+4. Up-level GraphQL expertise across the organization
+
 
 ## Procedures
 
