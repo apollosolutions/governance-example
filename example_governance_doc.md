@@ -55,9 +55,9 @@ In addition to the certifications, Apollo also offers smaller modules for focusi
 
 - [A bite-sized course on what federation is](https://www.apollographql.com/tutorials/introduction-to-federation)
 - [Basics of GraphOS with a strong focus on Studio usage](https://www.apollographql.com/tutorials/getting-started-with-graphos)
-- [Beta course for safe API delivery into GraphOS](https://www.apollographql.com/tutorials/graphos-shipping-supergraph)
-- [Beta mini-course on growing your supergraph](https://www.apollographql.com/tutorials/graphos-growing-supergraph)
-- [Beta course around leveraging Apollo Client on a React front-end](https://www.apollographql.com/tutorials/client-side-graphql-react)
+- [Course on safe API delivery into GraphOS](https://www.apollographql.com/tutorials/graphos-shipping-supergraph)
+- [Mini-course on growing your supergraph](https://www.apollographql.com/tutorials/graphos-growing-supergraph)
+- [Course around leveraging Apollo Client on a React front-end](https://www.apollographql.com/tutorials/client-side-graphql-react)
 
 ### Enterprise Modules
 
@@ -91,7 +91,7 @@ The success outcomes for the mission established by ACME are as follows:
 
 1. We will simplify the API landscape by making the GraphQL supergraph the preferred platform over continued development of RESTful APIs. 
 2. Our focus will be on building reusable Domain APIs to focus on reusability, maintainability and scalability while minimizing the timelines required to update business logic.
-3. We will also establish a "GraphQL Shepherds" guild to play a key role in training and up-leveling GraphQL expertise across the dev teams.
+3. We will also establish a "GraphQL Shepherds" group to play a key role in training and up-leveling GraphQL expertise across the dev teams.
 4. This, in turn will help to spread GraphQL expertise across the organization
 
 ## Procedures
@@ -140,7 +140,7 @@ For new subgraphs, there will also be a separate meeting to discuss the proposal
 
 Once both the SWG and subgraph team(s) agree on the change, the proposal will be considered "approved" and will move to be implemented into the supergraph.
 
-Subgraph teams can pull down the approved proposal using `rover` and once published to the supergraph the proposal will be marked as "implemented"
+Subgraph teams can pull down the approved proposal using `rover` and once published to the supergraph the proposal will be marked as "implemented". Subgraph teams should follow the proposed workflow outlined [here](https://www.apollographql.com/docs/graphos/platform/schema-management/proposals/implement).
 
 ### Deprecations
 
