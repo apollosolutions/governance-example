@@ -51,7 +51,7 @@ The following is a proposed learning path for contributors not familiar with Apo
 
 Apollo offers two certification courses through their Odyssey platform: [Associate](https://www.apollographql.com/tutorials/certifications/apollo-graph-associate) and [Professional](https://www.apollographql.com/tutorials/certifications/apollo-graph-professional). Contributors are recommended to complete at least the Associate certification in order to understand the basics of GraphQL and Federation.
 
-In addition to the certifications, Apollo also offers smaller modules for focusing on certain areas:
+In addition to the certifications, Apollo also offers smaller courses for focusing on certain areas:
 
 - [A bite-sized course on what federation is](https://www.apollographql.com/tutorials/introduction-to-federation)
 - [Basics of GraphOS with a strong focus on Studio usage](https://www.apollographql.com/tutorials/getting-started-with-graphos)
@@ -59,9 +59,9 @@ In addition to the certifications, Apollo also offers smaller modules for focusi
 - [Mini-course on growing your supergraph](https://www.apollographql.com/tutorials/graphos-growing-supergraph)
 - [Course around leveraging Apollo Client on a React front-end](https://www.apollographql.com/tutorials/client-side-graphql-react)
 
-### Enterprise Modules
+### Enterprise Courses
 
-Enterprise modules require ACME contributors to log into Odyssey using their SSO credentials
+Enterprise courses require ACME contributors to log into Odyssey using their SSO credentials
 - [Effective graph stewardship](https://www.apollographql.com/tutorials/effective-stewardship)
 - [Observability in GraphOS](https://www.apollographql.com/tutorials/supergraph-observability)
 - [Testing for both clients and the servers](https://www.apollographql.com/tutorials/testing)
