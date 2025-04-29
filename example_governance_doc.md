@@ -49,15 +49,15 @@ The following is a proposed learning path for contributors not familiar with Apo
 
 ### Learning Paths
 
-Apollo offers two certification courses through their Odyssey platform: [Associate](https://www.apollographql.com/tutorials/certifications/apollo-graph-associate) and [Professional](https://www.apollographql.com/tutorials/certifications/apollo-graph-professional). Contributors are recommended to complete at least the Associate certification in order to understand the basics of GraphQL and Federation.
+Apollo offers two certifications through their Odyssey platform: [Associate](https://www.apollographql.com/tutorials/certifications/apollo-graph-associate) and [Professional](https://www.apollographql.com/tutorials/certifications/apollo-graph-professional). Contributors are recommended to complete at least the Associate certification in order to understand the basics of GraphQL and Federation.
+
+Contributors working on REST connectors are recommended to complete the [Apollo Orchestration Associate](https://www.apollographql.com/tutorials/certifications/apollo-orchestration-associate) certification as well.
 
 In addition to the certifications, Apollo also offers smaller courses for focusing on certain areas:
 
 - [A bite-sized course on what federation is](https://www.apollographql.com/tutorials/introduction-to-federation)
-- [Basics of GraphOS with a strong focus on Studio usage](https://www.apollographql.com/tutorials/getting-started-with-graphos)
-- [Course on safe API delivery into GraphOS](https://www.apollographql.com/tutorials/graphos-shipping-supergraph)
-- [Mini-course on growing your supergraph](https://www.apollographql.com/tutorials/graphos-growing-supergraph)
-- [Course around leveraging Apollo Client on a React front-end](https://www.apollographql.com/tutorials/client-side-graphql-react)
+- [Set of courses on working with your supergraph](https://www.apollographql.com/tutorials/browse?categories=supergraph)
+- [Courses around leveraging Apollo Client on the front-end](https://www.apollographql.com/tutorials/browse?categories=client&paths=frontend)
 
 ### Enterprise Courses
 
@@ -66,10 +66,13 @@ Enterprise courses require ACME contributors to log into Odyssey using their SSO
 - [Observability in GraphOS](https://www.apollographql.com/tutorials/supergraph-observability)
 - [Testing for both clients and the servers](https://www.apollographql.com/tutorials/testing)
 
+A full list of Enterprise courses can be found [here](https://www.apollographql.com/tutorials/browse/?categories=enterprise)
+
 ### Additional Resources
 
-- Another great reference for GraphQL is the official [GraphQL website](https://graphql.org/learn/)
+- Another great reference for GraphQL is the [GraphQL website](https://graphql.com/learn/)
 - Teams are also encouraged to run through [Supergraph Architecture Framework (SAF) assessment](https://saf.apollographql.com/) to better understand their GraphQL posture across several pillars like Reliability, Security, Operational Excellence, Performance and Developer Experience
+- A full reference of the [GraphQL spec](https://spec.graphql.org/)
 
 ## Background
 
